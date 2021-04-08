@@ -18,11 +18,11 @@ public class ServiceTest {
         InsertService insertService = new InsertService();
         //删除服务
         DeleteService deleteService = new DeleteService();
+
         System.out.println("....begin insert....");
         insertService.insert1(1040);
         insertService.insert2(20000);
         insertService.insert3(30203);
-
         System.out.println(".....end insert.....");
         List<Integer> list = new LinkedList<>();
         for (int i = 0; i < 29440; i++) {

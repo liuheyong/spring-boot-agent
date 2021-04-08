@@ -6,7 +6,6 @@ import javassist.CtMethod;
 import javassist.CtNewMethod;
 
 import java.lang.instrument.ClassFileTransformer;
-import java.lang.instrument.IllegalClassFormatException;
 import java.lang.reflect.Modifier;
 import java.security.ProtectionDomain;
 import java.util.Objects;
@@ -31,15 +30,14 @@ public class TimeMonitorTransformer implements ClassFileTransformer {
 
     /**
      * @param classLoader         默认类加载器
-     * @param className           类名的关键字 因为还会进行模糊匹配
+     * @param className           类名
      * @param classBeingRedefined
      * @param protectionDomain
      * @param classfileBuffer
      * @return
-     * @throws IllegalClassFormatException
      */
     public byte[] transform(ClassLoader classLoader, String className, Class<?> classBeingRedefined,
-                            ProtectionDomain protectionDomain, byte[] classfileBuffer) throws IllegalClassFormatException {
+                            ProtectionDomain protectionDomain, byte[] classfileBuffer) {
         className = className.replace("/", ".");
         CtClass ctClass;
         try {
