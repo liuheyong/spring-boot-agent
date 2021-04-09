@@ -17,6 +17,28 @@ import java.util.Objects;
  */
 public class TimeMonitorTransformer implements ClassFileTransformer {
 
+    //@Override
+    //public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined,
+    //                        ProtectionDomain protectionDomain, byte[] classfileBuffer) {
+    //    PatternMatcher matcher = new Perl5Matcher();
+    //    PatternCompiler compiler = new Perl5Compiler();
+    //    //指定的业务类
+    //    String interceptorClass ="com.service.InsertService";
+    //    //指定的方法
+    //    String interceptorMethod = "insert1";
+    //    try {
+    //        if (matcher.matches(className,compiler.compile(interceptorClass))){
+    //            ByteCode byteCode = new ByteCode();
+    //            CtClass ctClass = byteCode.modifyByteCode(interceptorClass, interceptorMethod);
+    //            return ctClass.toBytecode();
+    //        }
+    //    }
+    //    catch (Exception e){
+    //        e.printStackTrace();
+    //    }
+    //    return null;
+    //}
+
     private static final String START_TIME = "\nlong startTime = System.currentTimeMillis();\n";
     private static final String END_TIME = "\nlong endTime = System.currentTimeMillis();\n";
     private static final String METHOD_RETURN_VALUE_VAR = "__time_monitor_result";
@@ -119,5 +141,4 @@ public class TimeMonitorTransformer implements ClassFileTransformer {
         //增加新方法
         ctClass.addMethod(newMethod);
     }
-
 }
