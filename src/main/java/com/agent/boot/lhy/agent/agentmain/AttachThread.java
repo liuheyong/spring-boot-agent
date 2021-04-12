@@ -30,7 +30,7 @@ public class AttachThread extends Thread {
     }
 
     public static void main(String[] args) {
-        new AttachThread("D:/idea-workspace/spring-boot-agent/target/spring-boot-agent.jar", VirtualMachine.list()).start();
+        new AttachThread("D:\\idea-workspace\\spring-boot-agent\\target\\spring-boot-agent.jar", VirtualMachine.list()).start();
     }
 
     @Override
