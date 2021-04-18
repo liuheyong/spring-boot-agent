@@ -1,5 +1,6 @@
 package com.agent.boot.lhy.agent.agentmain;
 
+import com.alibaba.fastjson.JSON;
 import com.sun.tools.attach.AttachNotSupportedException;
 import com.sun.tools.attach.VirtualMachine;
 import com.sun.tools.attach.VirtualMachineDescriptor;
@@ -57,7 +58,8 @@ public class AttachThread extends Thread {
                 }
             }
             Objects.requireNonNull(vm).loadAgent(jar, "hello");
-            vm.detach();
+            System.out.println(JSON.toJSONString(System.getProperties()));
+            //vm.detach();
         } catch (Exception e) {
             System.out.println("异常：" + e);
         }

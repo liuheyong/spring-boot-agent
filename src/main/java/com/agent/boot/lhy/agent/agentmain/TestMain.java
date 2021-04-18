@@ -1,5 +1,7 @@
 package com.agent.boot.lhy.agent.agentmain;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * @author: liuheyng
  * @date: 2021/4/10 9:49
@@ -11,9 +13,10 @@ public class TestMain {
         int count = 0;
         do {
             deal(count);
-            Thread.sleep(2000);
+            Thread.sleep(20000);
             count++;
-        } while (count <= 50);
+            System.out.println(JSON.toJSONString(System.getProperties()));
+        } while (count <= 5000);
     }
 
     public static void deal(Integer count) {

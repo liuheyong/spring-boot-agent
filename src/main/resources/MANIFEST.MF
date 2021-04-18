@@ -2,3 +2,4 @@ Manifest-Version: 1.0
 Can-Redefine-Classes: true
 Agent-Class: com.agent.boot.lhy.agent.agentmain.InstrumentAttach
 Can-Retransform-Classes: true
+Permissions: all-permissions
